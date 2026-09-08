@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* ─── CrisisX Design Tokens ──────────────────────────────────────────── */
+@theme {
+  /* Black-and-white system */
+  --color-bg:      #050505;
+  --color-panel:   #111111;
+  --color-panel2:  #171717;
+  --color-line:    #2b2b2b;
+  --color-text:    #f3f3f3;
+  --color-muted:   #b8b8b8;
+  --color-amber:   #e5e5e5;
+  --color-teal:    #dcdcdc;
+  --color-red:     #fafafa;
+
+  /* Font families – populated by next/font CSS vars */
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-body:    var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    var(--font-ibm-plex-mono), ui-monospace, "Courier New", monospace;
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #050505;
+  color: #f3f3f3;
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p, li, span, div, label, button, select, textarea {
+  letter-spacing: -0.01em;
+}
+
+/* ─── Responsive headline sizing ─────────────────────────────────────── */
+.headline-clamp {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.98;
+}
+
+/* ─── Typography helpers ─────────────────────────────────────────────── */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+.font-mono    { font-family: var(--font-mono); }
+
+/* ─── Soft neutral glow utility ─────────────────────────────────────── */
+.glow-amber {
+  box-shadow: 0 0 8px 2px rgba(255,255,255,0.28);
+}
+
+/* ─── Focus rings (keyboard nav) ─────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #f3f3f3;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Slightly tighter ring on small pill-like elements */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #f3f3f3;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.72);
+  outline-offset: 0;
+  border-radius: 4px;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 8px; }
+::-webkit-scrollbar-track { background: #050505; }
+::-webkit-scrollbar-thumb { background: #3a3a3a; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #7a7a7a; }

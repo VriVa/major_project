@@ -1,0 +1,1 @@
+A multilingual crisis-response demo for comparing tokenization, transfer quality, and deployment trade-offs across leading language models.
